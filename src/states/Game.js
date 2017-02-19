@@ -23,6 +23,15 @@ export default class extends Phaser.State {
   }
 
   create() {
+    const skyHeight = this.cache.getImage('sky').height;
+    this.sky = this.add.tileSprite(0, 0, this.world.width, skyHeight, 'sky');
+    this.sky.scale.y =  this.world.centerY / skyHeight;
+
+    this.road = this.add.sprite(0, this.world.centerY, 'road');
+    this.road.width = this.world.width;
+    this.road.height = this.world.height * 0.5;
+
+
     this.trees = this.add.group();
 
     // timer that creates new tree

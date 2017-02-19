@@ -8,7 +8,12 @@ export default class extends Phaser.State {
     this.load.setPreloadSprite(this.preloadBar);
 
     // подгрузи ассеты для всей игры здесь
+    this.load.image('road', 'assets/images/road.png');
+    this.load.image('sky', 'assets/images/sky.png');
     this.load.image('tree', 'assets/images/tree.png');
+    this.load.image('hill', 'assets/images/hill.png');
+    this.load.image('ground', 'assets/images/ground.png');
+
     // по завершении загрузки ассетов, перейди в другой state
     this.load.onLoadComplete.add(() => {
       this.game.state.start('Game');
